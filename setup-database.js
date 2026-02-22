@@ -26,7 +26,7 @@ async function setupDatabase() {
       // --- CORE: CREATORS ---
       {
         id: process.env.CREATORS_COLLECTION_ID,
-        name: "Creators",
+        name: ID.unique(),
         attributes: [
           { key: "user_id", type: "string", size: 255, required: true },
           { key: "channel_name", type: "string", size: 256, required: true },
@@ -47,7 +47,7 @@ async function setupDatabase() {
       // --- CORE: VIDEOS ---
       {
         id: process.env.VIDEOS_COLLECTION_ID,
-        name: "Videos",
+        name: ID.unique(),
         attributes: [
           { key: "title", type: "string", size: 256, required: true },
           { key: "description", type: "string", size: 5000, required: false },
@@ -78,7 +78,7 @@ async function setupDatabase() {
       // --- CORE: COMMENTS ---
       {
         id: process.env.COMMENTS_COLLECTION_ID,
-        name: "Comments",
+        name: ID.unique(),
         attributes: [
           { key: "video_id", type: "string", size: 255, required: true },
           { key: "user_id", type: "string", size: 255, required: true },
@@ -96,7 +96,7 @@ async function setupDatabase() {
       // --- CORE: TAGS ---
       {
         id: process.env.TAGS_COLLECTION_ID,
-        name: "Tags",
+        name: ID.unique(),
         attributes: [
           { key: "name", type: "string", size: 50, required: true },
           { key: "count", type: "integer", required: true, default: 0 },
